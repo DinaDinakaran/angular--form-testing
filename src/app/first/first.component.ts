@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { ServerService } from '../server.service';
 
 @Component({
   selector: 'app-first',
@@ -15,16 +16,22 @@ fg = new FormGroup({
   phone : new FormControl("",[Validators.required,Validators.minLength(3)]),
   password : new FormControl("",[Validators.required,Validators.minLength(2),Validators.maxLength(15)])
 })
-name: any;
-onSubmit(){
-  console.log(this.fg.value)
-}
 
-  constructor() {
+
+  constructor(private _user :ServerService) {
 
    }
 
   ngOnInit(): void {
   }
+
+  onSubmit(){
+  
+  this._user.SaveNewuser(this.fg.value).subscribe(
+    sub => console.log(sub),
+    err => console.log(err)
+  )
+  }
+  
 
 }

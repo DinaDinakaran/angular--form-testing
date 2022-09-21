@@ -1,0 +1,6 @@
+<div class="home">
+    <h1 class="message" *ngIf="value ;then Mythen;else Myelse"></h1>
+    <ng-template class="success" #Mythen>Sign-In Successfully >>> 😍</ng-template>
+    <ng-template #Myelse><a class="box"  routerLink="/sign-in" >Go To Sign-Up</a></ng-template>
+</div>
+

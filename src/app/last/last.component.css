@@ -1,0 +1,8 @@
+.last{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    height: 100vh;
+    font-size: xx-large;
+}

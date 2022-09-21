@@ -1,0 +1,11 @@
+.wellcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+.text{
+    font-size: xx-large;
+    font-weight: 900;
+
+}
