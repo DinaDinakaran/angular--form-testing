@@ -9,13 +9,17 @@
              <form [formGroup]="fg" (ngSubmit)="onSubmit()" class="form">
                 <label for="name" class="from-title">Name :</label>
                 <input class="box" id="name" type="text" formControlName="name">
+                <p class="error" *ngIf="name && name.invalid && name.touched">Name is invaild please enter minimum 2 character</p>
                 <label for="Email" class="from-title">Email :</label>
                 <input class="box" type="text" formControlName="email">
+                <p class="error" *ngIf="email && email.invalid && email.touched">Email is invaild please entervalid email</p>
                 <label for="number" class="from-title">Phone :</label>
                 <input class="box" type="text" formControlName="phone">
+                <p class="error" *ngIf="phone && phone.invalid && phone.touched">Name is invaild please enter valid phone number</p>
                 <label for="password" class="from-title">Password :</label>
-                <input  class="box"type="password" formControlName="password">
-                <a type="submit" class="btn" routerLink="/home">Submit</a>
+                <input placeholder="examble :Dina@karan143" class="box"type="password" formControlName="password">
+                <p class="error" *ngIf="password && password.invalid && password.touched">Please Enter Valid Password</p>
+                <button type="submit" [disabled]="fg.invalid" class="btn" >Submit</button>
              </form>
         </div>
     </div>
